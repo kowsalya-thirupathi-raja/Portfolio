@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name | Electronics Engineer</title>
+  <meta name="description" content="Electronics engineer portfolio with selected visuals, skills, resume, and contact links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: #0d1424;
+      --panel-2: #111a2f;
+      --text: #f5f7fb;
+      --muted: #9aa7bf;
+      --line: rgba(255,255,255,.08);
+      --accent: #8ea6ff;
+      --accent-2: #72d6b4;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(86, 112, 255, .16), transparent 35%),
+        linear-gradient(180deg, #070b14 0%, #090e18 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+    /* Top navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7,11,20,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .navin {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: .3px;
+      font-size: 15px;
+    }
+    .links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      padding: 84px 0 34px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.03);
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(114,214,180,.12);
+    }
+    h1 {
+      font-size: clamp(42px, 6.8vw, 72px);
+      line-height: .98;
+      margin: 18px 0 16px;
+      letter-spacing: -.04em;
+    }
+    .lead {
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 19px);
+      margin: 0;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .btn {
+      padding: 13px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      font-weight: 600;
+      font-size: 14px;
+      transition: .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #9f8dff);
+      color: #08101f;
+    }
+    .btn.secondary {
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+    }
+
+    /* Side panel */
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .profile {
+      padding: 26px;
+    }
+    .profile h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .meta {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .pillrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      color: #dce4f4;
+      font-size: 13px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 28px 0 10px;
+    }
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 26px;
+      letter-spacing: -.02em;
+    }
+    .section .intro {
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    /* Two-column layout */
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .block {
+      padding: 24px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    /* Skills */
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+    .item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .badge {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(142,166,255,.12);
+      color: #ced8ff;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .item b {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+    .item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Visual proof */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .shot {
+      overflow: hidden;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .placeholder {
+      aspect-ratio: 16 / 10;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(142,166,255,.18), rgba(114,214,180,.12));
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      padding: 18px;
+      letter-spacing: .2px;
+    }
+    .cap {
+      padding: 14px 16px 16px;
+    }
+    .cap b {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .cap span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Resume/contact */
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .contact a {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 28px 0 46px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      .hero, .two, .gallery { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+      h1 { font-size: clamp(38px, 10vw, 58px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="wrap navin">
+      <div class="brand">Your Name</div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#visuals">Visual Proof</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Hero section -->
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Electronics Engineer Portfolio</div>
+        <h1>Engineering systems that are precise, practical, and built to perform.</h1>
+        <p class="lead">
+          I design and validate electronics across embedded systems, PCB work, measurement, and debugging.
+          This portfolio is a compact view of my technical direction, visual proof, and professional links.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#visuals">View Visual Proof</a>
+          <a class="btn secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <!-- Side profile -->
+      <aside class="panel profile">
+        <h3>Profile</h3>
+        <p class="meta">Target roles: Electronics Engineer, Embedded Systems Engineer, Hardware Engineer</p>
+        <div class="pillrow">
+          <span class="pill">Embedded C</span>
+          <span class="pill">PCB Design</span>
+          <span class="pill">SPICE</span>
+          <span class="pill">Oscilloscope</span>
+          <span class="pill">Debugging</span>
+          <span class="pill">Python</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About + skills -->
+    <section class="section two" id="about">
+      <div class="block">
+        <h2>About</h2>
+        <p class="intro">
+          I’m an electronics engineer focused on building reliable systems and documenting them with clarity.
+          I like work that is measurable, testable, and well-presented.
+        </p>
+      </div>
+
+      <div class="block" id="skills">
+        <h2>Skills</h2>
+        <div class="list">
+          <div class="item">
+            <div class="badge">1</div>
+            <div>
+              <b>Hardware</b>
+              <span>Analog and digital circuits, sensors, power, boards, and lab validation.</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="badge">2</div>
+            <div>
+              <b>Software</b>
+              <span>Embedded C, Python, scripting, and clean technical communication.</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="badge">3</div>
+            <div>
+              <b>Tools</b>
+              <span>Oscilloscope, logic analyzer, simulation tools, and GitHub.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual proof -->
+    <section class="section" id="visuals">
+      <h2>Visual Proof</h2>
+      <p class="intro">
+        Use this section for PCB photos, simulation captures, block diagrams, or demo clips.
+        Keep each label short and specific.
+      </p>
+
+      <div class="gallery">
+        <article class="shot">
+          <div class="placeholder">PCB photo / render</div>
+          <div class="cap">
+            <b>Board Design</b>
+            <span>Final board, assembly, or layout view.</span>
+          </div>
+        </article>
+
+        <article class="shot">
+          <div class="placeholder">Waveform / test capture</div>
+          <div class="cap">
+            <b>Validation</b>
+            <span>Scope trace, measurement, or simulation result.</span>
+          </div>
+        </article>
+
+        <article class="shot">
+          <div class="placeholder">Diagram / demo thumbnail</div>
+          <div class="cap">
+            <b>System View</b>
+            <span>Architecture diagram or short demo preview.</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Resume and contact -->
+    <section class="section two" id="resume">
+      <div class="block">
+        <h2>Resume</h2>
+        <p class="intro">Link your PDF resume here for quick recruiter access.</p>
+        <div class="actions">
+          <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+      </div>
+
+      <div class="block" id="contact">
+        <h2>Contact</h2>
+        <p class="intro">Keep your contact links simple and visible.</p>
+        <div class="contact">
+          <a href="mailto:you@example.com">Email</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap">© 2026 Your Name. Built for GitHub Pages.</footer>
+</body>
+</html>
