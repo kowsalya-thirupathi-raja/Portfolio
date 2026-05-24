@@ -9,6 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+
   <style>
     :root {
       --bg: #070b14;
@@ -39,7 +48,6 @@
     img { max-width: 100%; display: block; }
     .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
 
-    /* Top navigation */
     .nav {
       position: sticky;
       top: 0;
@@ -69,7 +77,6 @@
     }
     .links a:hover { color: var(--text); }
 
-    /* Hero */
     .hero {
       padding: 84px 0 34px;
       display: grid;
@@ -132,7 +139,6 @@
       color: var(--text);
     }
 
-    /* Side panel */
     .panel {
       background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       border: 1px solid var(--line);
@@ -165,7 +171,6 @@
       font-size: 13px;
     }
 
-    /* Sections */
     .section {
       padding: 28px 0 10px;
     }
@@ -180,7 +185,6 @@
       max-width: 70ch;
     }
 
-    /* Two-column layout */
     .two {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -193,7 +197,6 @@
       border-radius: var(--radius);
     }
 
-    /* Skills */
     .list {
       display: grid;
       gap: 12px;
@@ -225,7 +228,6 @@
       font-size: 14px;
     }
 
-    /* Visuals */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -261,7 +263,6 @@
       font-size: 13px;
     }
 
-    /* Resume/contact */
     .contact {
       display: flex;
       flex-wrap: wrap;
@@ -274,6 +275,12 @@
       background: rgba(255,255,255,.03);
       color: var(--text);
       font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact i {
+      font-size: 1.1rem;
     }
 
     footer {
@@ -291,10 +298,9 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <header class="nav">
     <div class="wrap navin">
-      <div class="brand">Your Name</div>
+      <div class="brand">Kowsalya Thirupathi Raja</div>
       <nav class="links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -307,7 +313,6 @@
 
   <main class="wrap">
 
-    <!-- Hero section -->
     <section class="hero">
       <div>
         <div class="eyebrow"><span class="dot"></span> Electronics Engineer Portfolio</div>
@@ -322,7 +327,6 @@
         </div>
       </div>
 
-      <!-- Side profile -->
       <aside class="panel profile">
         <h3>Profile</h3>
         <p class="meta">Target roles: Electronics Engineer, Hardware Developer, Embedded Systems Engineer</p>
@@ -337,7 +341,6 @@
       </aside>
     </section>
 
-    <!-- About + skills -->
     <section class="section two" id="about">
       <div class="block">
         <h2>About</h2>
@@ -375,7 +378,6 @@
       </div>
     </section>
 
-    <!-- Visuals -->
     <section class="section" id="visuals">
       <h2>A Glimpse</h2>
       <p class="intro">
@@ -409,7 +411,6 @@
       </div>
     </section>
 
-    <!-- Resume and contact -->
     <section class="section two" id="resume">
       <div class="block">
         <h2>Resume</h2>
@@ -423,9 +424,12 @@
         <h2>Contact</h2>
         <p class="intro">You can reach me via</p>
         <div class="contact">
-          <a href="mailto:thirupathirajakowsalya@gmail.com.com">Email</a>
-          <a href="https://www.linkedin.com/in/kowsalya-thirupathi-raja-76b488171" target="_blank" rel="noopener">LinkedIn</a>
-          <!-- a href="https://github.com" target="_blank" rel="noopener">GitHub</a -->
+          <a href="mailto:thirupathirajakowsalya@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/kowsalya-thirupathi-raja-76b488171" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </section>
