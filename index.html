@@ -301,21 +301,29 @@
     }
 
     /* Profile picture block */
-    .section.three .profile-pic {
-      padding: 24px 20px;
-    }
-    .profile-image {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 12px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    /* First column: full‑block image, no extra space */
+.section.three .profile-img-block {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.profile-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;        /* or 1 / 1 if you prefer square */
+  background: rgba(255,255,255,.05);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.profile-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
     /* Modal popups for A Glimpse tiles */
     .modal {
@@ -409,10 +417,12 @@
       </aside>
     </section>
 
-    <!-- About grid: Profile image | About | Skills -->
+   <!-- About grid: Profile image | About | Skills -->
 <section class="section three" id="about">
   <div class="block profile-img-block">
-    <img src="assets/Soldering.JPG" alt="Kowsalya Thirupathi Raja">
+    <div class="profile-img-wrapper">
+      <img src="assets/Soldering.JPG" alt="Kowsalya Thirupathi Raja">
+    </div>
   </div>
 
   <div class="block">
