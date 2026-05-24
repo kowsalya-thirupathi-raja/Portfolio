@@ -239,6 +239,9 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
     }
+    .shot-link {
+      display: block;
+    }
     .placeholder {
       aspect-ratio: 16 / 10;
       display: grid;
@@ -294,6 +297,52 @@
       .hero { padding-top: 48px; }
       h1 { font-size: clamp(38px, 10vw, 58px); }
     }
+
+    /* Modal popups for A Glimpse tiles */
+    .modal {
+      opacity: 0;
+      visibility: hidden;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+
+    .modal:target {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      max-width: 520px;
+      color: var(--text);
+      box-shadow: 0 18px 60px rgba(0,0,0,.4);
+      max-height: 80vh;
+      overflow: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 1.8rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .modal-close:hover {
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
@@ -346,7 +395,7 @@
         <h2>About</h2>
         <p class="intro">
           I’m an electronics engineer focused on building reliable hardware and documenting them with clarity.
-          I like work that is measurable, testable, and well-presented.
+          I like work that is measurable, testable, and well‑presented.
         </p>
       </div>
 
@@ -378,6 +427,7 @@
       </div>
     </section>
 
+    <!-- A Glimpse section with clickable tiles -->
     <section class="section" id="visuals">
       <h2>A Glimpse</h2>
       <p class="intro">
@@ -385,29 +435,66 @@
       </p>
 
       <div class="gallery">
+        <!-- PCB tile -->
         <article class="shot">
-          <div class="placeholder">PCBs</div>
-          <div class="cap">
-            <b>Board Design</b>
-            <span>Rendered views of boards designed</span>
-          </div>
+          <a href="#modal-pcb" class="shot-link">
+            <div class="placeholder">PCBs</div>
+            <div class="cap">
+              <b>Board Design</b>
+              <span>Rendered views of boards designed</span>
+            </div>
+          </a>
         </article>
 
+        <!-- ML in EMC tile -->
         <article class="shot">
-          <div class="placeholder">ML in EMC</div>
-          <div class="cap">
-            <b>Signal Integrity</b>
-            <span>Uses ML to predict SI metric for high-speed PCB data links.</span>
-          </div>
+          <a href="#modal-ml-emc" class="shot-link">
+            <div class="placeholder">ML in EMC</div>
+            <div class="cap">
+              <b>Signal Integrity</b>
+              <span>Uses ML to predict SI metric for high‑speed PCB data links.</span>
+            </div>
+          </a>
         </article>
 
+        <!-- 3D modeling tile -->
         <article class="shot">
-          <div class="placeholder">3D modeling</div>
-          <div class="cap">
-            <b>Hobby Projects</b>
-            <span>To be able to model PCB housings</span>
-          </div>
+          <a href="#modal-3d" class="shot-link">
+            <div class="placeholder">3D modeling</div>
+            <div class="cap">
+              <b>Hobby Projects</b>
+              <span>To be able to model PCB housings</span>
+            </div>
+          </a>
         </article>
+      </div>
+
+      <!-- Modal popups (same window) -->
+      <div id="modal-pcb" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-content">
+          <h3>PCB Projects</h3>
+          <p>Detailed description of your PCB‑design work.</p>
+          <img src="assets/images/pcb1.png" alt="PCB layout">
+        </div>
+      </div>
+
+      <div id="modal-ml-emc" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-content">
+          <h3>Machine Learning in EMC</h3>
+          <p>Explain your ML‑based EMC or signal‑integrity project.</p>
+          <img src="assets/images/ml-emc.png" alt="ML plot">
+        </div>
+      </div>
+
+      <div id="modal-3d" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-content">
+          <h3>3D Modeling</h3>
+          <p>Describe your 3D‑modeling projects for enclosures and housings.</p>
+          <img src="assets/images/3d-model.png" alt="3D model">
+        </div>
       </div>
     </section>
 
@@ -416,7 +503,7 @@
         <h2>Resume</h2>
         <p class="intro">If you wish to download my resume.</p>
         <div class="actions">
-          <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Click here</a>
+          <a class="btn primary" href="assets/K RAJA CV 13.05.2026.pdf" target="_blank" rel="noopener">Click here</a>
         </div>
       </div>
 
