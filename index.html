@@ -85,15 +85,7 @@
 
     .hero > div {
       max-width: 640px;
-      align-self: center;
-    }
-
-    .panel.profile {
-      align-self: center;
-      width: 100%;
-      max-width: 430px;
-      justify-self: end;
-      padding: 18px;
+      align-self: start;
     }
 
     .eyebrow {
@@ -130,6 +122,18 @@
       margin: 0;
     }
 
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .profile {
+      padding: 18px;
+      width: 100%;
+      max-width: 430px;
+      justify-self: end;
+    }
     .profile-img-wrapper {
       width: 100%;
       aspect-ratio: 4 / 4.2;
@@ -158,49 +162,111 @@
       max-width: 70ch;
     }
 
-    .gallery {
+    .stack {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
     }
 
-    .shot {
-      display: block;
+    details.project {
       background: rgba(255,255,255,.03);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       overflow: hidden;
-      transition: transform .2s ease, background .2s ease;
-    }
-    .shot:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
     }
 
-    .preview {
+    details.project summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    details.project summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-img {
+      width: 120px;
+      flex: 0 0 120px;
       aspect-ratio: 16 / 10;
       overflow: hidden;
-      border-bottom: 1px solid var(--line);
+      border-radius: 16px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.04);
     }
-    .preview img {
+
+    .summary-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
-    .cap {
-      padding: 14px 16px 16px;
+    .summary-text {
+      flex: 1;
+      min-width: 0;
     }
-    .cap b {
+
+    .summary-text b {
       display: block;
       margin-bottom: 4px;
-      font-size: 14px;
+      font-size: 15px;
     }
-    .cap span {
+
+    .summary-text span {
       color: var(--muted);
       font-size: 13px;
+    }
+
+    .summary-arrow {
+      color: var(--muted);
+      font-size: 18px;
+      transition: transform .2s ease;
+    }
+
+    details.project[open] .summary-arrow {
+      transform: rotate(180deg);
+    }
+
+    .project-body {
+      border-top: 1px solid var(--line);
+      padding: 18px 16px 20px;
+      background: rgba(255,255,255,.02);
+    }
+
+    .readme-body {
+      max-width: 75ch;
+      color: var(--text);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .readme-body h1,
+    .readme-body h2,
+    .readme-body h3 {
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .readme-body p,
+    .readme-body li {
+      color: var(--text);
+      margin-bottom: 0.9rem;
+    }
+
+    .readme-body a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .readme-body img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      margin-top: 12px;
     }
 
     .footer-links {
@@ -222,83 +288,10 @@
       transition: .2s ease;
       font-size: 18px;
     }
+
     .icon-link:hover {
       transform: translateY(-2px);
       background: rgba(255,255,255,.08);
-    }
-
-    .modal {
-      opacity: 0;
-      visibility: hidden;
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(0,0,0,.82);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      transition: opacity .25s ease;
-      padding: 20px;
-    }
-    .modal:target {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-    .modal-content {
-      background: var(--panel-2);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      width: min(92vw, 980px);
-      color: var(--text);
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      max-height: 88vh;
-      overflow: auto;
-      position: relative;
-    }
-    .modal-content h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-    }
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      font-size: 1.8rem;
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .modal-close:hover { color: var(--accent); }
-
-    .readme-body {
-      max-width: 65ch;
-      margin: 0 auto;
-      color: var(--text);
-      font-size: 15px;
-    }
-    .readme-body h1,
-    .readme-body h2,
-    .readme-body h3 {
-      line-height: 1.2;
-      margin-top: 0;
-      margin-bottom: 0.8rem;
-    }
-    .readme-body p,
-    .readme-body li {
-      color: var(--text);
-      margin-bottom: 0.9rem;
-    }
-    .readme-body a {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-    .readme-body img {
-      width: 100%;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      margin-top: 12px;
     }
 
     @media (max-width: 920px) {
@@ -306,17 +299,42 @@
         grid-template-columns: 1fr;
         gap: 24px;
         padding-top: 48px;
-        min-height: auto;
       }
 
       .hero > div,
-      .panel.profile {
+      .profile {
         max-width: 100%;
         justify-self: stretch;
       }
 
       h1 {
         max-width: none;
+      }
+
+      details.project summary {
+        align-items: flex-start;
+      }
+
+      .summary-img {
+        width: 96px;
+        flex-basis: 96px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      details.project summary {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .summary-img {
+        width: 100%;
+        flex-basis: auto;
+      }
+
+      .summary-arrow {
+        align-self: flex-end;
+        margin-top: -28px;
       }
     }
   </style>
@@ -355,36 +373,54 @@
       <h2>Works so far..</h2>
       <p class="intro">A small selection of projects and visuals.</p>
 
-      <div class="gallery">
-        <a href="#modal-pcb" class="shot" data-readme="projects/pcb/README.md" data-title="PCBs">
-          <div class="preview">
-            <img src="assets/pcb.png" alt="PCB preview">
+      <div class="stack">
+        <details class="project" open data-readme="projects/pcb/README.md">
+          <summary>
+            <div class="summary-img">
+              <img src="assets/pcb.png" alt="PCB preview">
+            </div>
+            <div class="summary-text">
+              <b>PCBs</b>
+              <span>Board design and layout samples.</span>
+            </div>
+            <div class="summary-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+          </summary>
+          <div class="project-body">
+            <div class="readme-body" id="readme-pcb">Loading...</div>
           </div>
-          <div class="cap">
-            <b>PCBs</b>
-            <span>Board design and layout samples.</span>
-          </div>
-        </a>
+        </details>
 
-        <a href="#modal-3d" class="shot" data-readme="projects/3d-model/README.md" data-title="3D Models">
-          <div class="preview">
-            <img src="assets/3d.png" alt="3D model preview">
+        <details class="project" data-readme="projects/3d-model/README.md">
+          <summary>
+            <div class="summary-img">
+              <img src="assets/3d.png" alt="3D model preview">
+            </div>
+            <div class="summary-text">
+              <b>3D Models</b>
+              <span>Hobby projects.</span>
+            </div>
+            <div class="summary-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+          </summary>
+          <div class="project-body">
+            <div class="readme-body" id="readme-3d">Loading...</div>
           </div>
-          <div class="cap">
-            <b>3D Models</b>
-            <span>Hobby projects</span>
-          </div>
-        </a>
+        </details>
 
-        <a href="#modal-emc" class="shot" data-readme="projects/ml-emc/README.md" data-title="ML in EMC">
-          <div class="preview">
-            <img src="assets/emc.png" alt="EMC preview">
+        <details class="project" data-readme="projects/ml-emc/README.md">
+          <summary>
+            <div class="summary-img">
+              <img src="assets/emc.png" alt="EMC preview">
+            </div>
+            <div class="summary-text">
+              <b>ML in EMC</b>
+              <span>Signal integrity and EMC in PCBs.</span>
+            </div>
+            <div class="summary-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+          </summary>
+          <div class="project-body">
+            <div class="readme-body" id="readme-emc">Loading...</div>
           </div>
-          <div class="cap">
-            <b>ML in EMC</b>
-            <span>Signal integrity and EMC in PCBs.</span>
-          </div>
-        </a>
+        </details>
       </div>
     </section>
 
@@ -402,38 +438,8 @@
     © 2026 Kowsalya Thirupathi Raja. Built for GitHub Pages.
   </footer>
 
-  <div id="modal-pcb" class="modal">
-    <a href="#" class="modal-close">&times;</a>
-    <div class="modal-content">
-      <h3>PCBs</h3>
-      <div id="readme-pcb" class="readme-body">Loading...</div>
-    </div>
-  </div>
-
-  <div id="modal-3d" class="modal">
-    <a href="#" class="modal-close">&times;</a>
-    <div class="modal-content">
-      <h3>3D Models</h3>
-      <div id="readme-3d" class="readme-body">Loading...</div>
-    </div>
-  </div>
-
-  <div id="modal-emc" class="modal">
-    <a href="#" class="modal-close">&times;</a>
-    <div class="modal-content">
-      <h3>ML in EMC</h3>
-      <div id="readme-emc" class="readme-body">Loading...</div>
-    </div>
-  </div>
-
   <script>
-    const pages = [
-      { id: 'readme-pcb', url: 'projects/pcb/README.md' },
-      { id: 'readme-3d', url: 'projects/3d-model/README.md' },
-      { id: 'readme-emc', url: 'projects/ml-emc/README.md' }
-    ];
-
-    async function loadReadme(targetId, url) {
+    async function loadMarkdown(targetId, url) {
       const el = document.getElementById(targetId);
       if (!el || el.dataset.loaded === '1') return;
       try {
@@ -446,12 +452,18 @@
       }
     }
 
-    pages.forEach(({ id, url }) => {
-      const modal = document.getElementById(id.replace('readme', 'modal'));
-      if (modal) {
-        modal.addEventListener('click', () => loadReadme(id, url), { once: true });
+    document.querySelectorAll('details.project').forEach((details) => {
+      const url = details.dataset.readme;
+      const body = details.querySelector('.readme-body');
+      const targetId = body?.id;
+      if (details.open && targetId && url) {
+        loadMarkdown(targetId, url);
       }
-      loadReadme(id, url);
+      details.addEventListener('toggle', () => {
+        if (details.open && targetId && url) {
+          loadMarkdown(targetId, url);
+        }
+      });
     });
   </script>
 </body>
