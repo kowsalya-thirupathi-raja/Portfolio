@@ -3,11 +3,11 @@
 <table>
   <tr>
     <td align="center">
-      <img src="images/3D Screw.png" alt="Image 1" width="100%">
+      <img src="images/3D%20Screw.png" alt="Image 1" width="100%">
       <br>M3 Screw
     </td>
     <td align="center">
-      <img src="images/Toy block.png" alt="Image 2" width="100%">
+      <img src="images/Toy%20block.png" alt="Image 2" width="100%">
       <br>Toy Block
     </td>
     <td align="center">
@@ -17,15 +17,15 @@
   </tr>
   <tr>
     <td align="center">
-      <img src="images/Loft bottle.png" alt="Image 4" width="100%">
+      <img src="images/Loft%20bottle.png" alt="Image 4" width="100%">
       <br>Loft Bottle
     </td>
     <td align="center">
-      <img src="images/Paper Clip.png" alt="Image 5" width="100%">
+      <img src="images/Paper%20Clip.png" alt="Image 5" width="100%">
       <br>Paper Clip
     </td>
     <td align="center">
-      <img src="images/Ice tray.png" alt="Image 6" width="100%">
+      <img src="images/Ice%20tray.png" alt="Image 6" width="100%">
       <br>Ice tray
     </td>
   </tr>
