@@ -122,31 +122,32 @@
       margin: 0;
     }
 
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .profile {
-      padding: 18px;
-      width: 100%;
-      max-width: 430px;
-      justify-self: end;
-    }
-    .profile-img-wrapper {
-      width: 100%;
-      aspect-ratio: 4 / 4.2;
-      background: rgba(255,255,255,.05);
-      border-radius: calc(var(--radius) - 4px);
-      overflow: hidden;
-    }
-    .profile-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .panel.profile {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+  max-width: 430px;
+  justify-self: end;
+}
+
+.profile-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 4.2;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.profile-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  background: transparent;
+}
 
     .section {
       padding: 28px 0 10px;
@@ -357,7 +358,7 @@
         <div class="eyebrow"><span class="dot"></span> Electronics Engineer</div>
         <h1>Engineering hardware that is reliable, practical, and built to perform.</h1>
         <p class="lead">
-          I design and validate electronics across PCBs, measurement, and debugging.
+          I design and validate electronic hardware, focusing on PCB design, through measurement, board bring-up, debugging, and testing.
           This portfolio is a compact view of my selective works.
         </p>
       </div>
