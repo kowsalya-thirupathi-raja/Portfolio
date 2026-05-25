@@ -4,19 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kowsalya Thirupathi Raja | Electronics Engineer</title>
-  <meta name="description" content="Electronics engineer portfolio with selected visuals, skills, resume, and contact links." />
+  <meta name="description" content="Electronics engineer portfolio with selected visuals and projects." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  >
 
   <style>
     :root {
@@ -134,10 +125,6 @@
       background: linear-gradient(135deg, var(--accent), #9f8dff);
       color: #08101f;
     }
-    .btn.secondary {
-      background: rgba(255,255,255,.03);
-      color: var(--text);
-    }
 
     .panel {
       background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
@@ -153,22 +140,9 @@
       font-size: 18px;
     }
     .meta {
-      margin: 0 0 20px;
+      margin: 0;
       color: var(--muted);
       font-size: 14px;
-    }
-    .pillrow {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .pill {
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-      color: #dce4f4;
-      font-size: 13px;
     }
 
     .section {
@@ -185,7 +159,6 @@
       max-width: 70ch;
     }
 
-    /* About | Skills | Profile picture */
     .section.three {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -199,51 +172,52 @@
       border-radius: var(--radius);
     }
 
-    .list {
-      display: grid;
-      gap: 12px;
+    .profile-img-block {
+      padding: 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+      overflow: hidden;
     }
-    .item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
+    .profile-img-wrapper {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      overflow: hidden;
     }
-    .badge {
-      width: 34px;
-      height: 34px;
-      flex: 0 0 34px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: rgba(142,166,255,.12);
-      color: #ced8ff;
-      font-weight: 700;
-      font-size: 13px;
-    }
-    .item b {
+    .profile-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      margin-bottom: 2px;
-      font-size: 14px;
-    }
-    .item span {
-      color: var(--muted);
-      font-size: 14px;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
     }
+
     .shot {
-      overflow: hidden;
       background: rgba(255,255,255,.03);
       border: 1px solid var(--line);
       border-radius: var(--radius);
+      overflow: hidden;
     }
-    .shot-link {
+
+    .shot summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .shot summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .shot-summary {
       display: block;
     }
+
     .placeholder {
       aspect-ratio: 16 / 10;
       display: grid;
@@ -255,6 +229,7 @@
       padding: 18px;
       letter-spacing: .2px;
     }
+
     .cap {
       padding: 14px 16px 16px;
     }
@@ -268,24 +243,17 @@
       font-size: 13px;
     }
 
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .shot-body {
+      padding: 0 16px 16px;
     }
-    .contact a {
-      padding: 12px 14px;
+    .shot-body p {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+    .shot-body img {
+      width: 100%;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .contact i {
-      font-size: 1.1rem;
     }
 
     footer {
@@ -295,80 +263,9 @@
     }
 
     @media (max-width: 920px) {
-      .hero, .two, .gallery, .section.three { grid-template-columns: 1fr; }
+      .hero, .section.three { grid-template-columns: 1fr; }
       .hero { padding-top: 48px; }
       h1 { font-size: clamp(38px, 10vw, 58px); }
-    }
-
-    /* Profile picture block */
-    /* First column: full‑block image, no extra space */
-.section.three .profile-img-block {
-  padding: 0;
-  background: none;
-  border: none;
-  box-shadow: none;
-  overflow: hidden;
-}
-
-.profile-img-wrapper {
-  width: 100%;
-  aspect-ratio: 4 / 3;        /* or 1 / 1 if you prefer square */
-  background: rgba(255,255,255,.05);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.profile-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-    /* Modal popups for A Glimpse tiles */
-    .modal {
-      opacity: 0;
-      visibility: hidden;
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(0,0,0,.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      transition: opacity .25s ease;
-    }
-
-    .modal:target {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .modal-content {
-      background: var(--panel-2);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      max-width: 520px;
-      color: var(--text);
-      box-shadow: 0 18px 60px rgba(0,0,0,.4);
-      max-height: 80vh;
-      overflow: auto;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      font-size: 1.8rem;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .modal-close:hover {
-      color: var(--accent);
     }
   </style>
 </head>
@@ -379,182 +276,102 @@
       <div class="brand">Kowsalya Thirupathi Raja</div>
       <nav class="links">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#visuals">A Glimpse</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
-
     <section class="hero">
       <div>
         <div class="eyebrow"><span class="dot"></span> Electronics Engineer</div>
-        <h1>Engineering hardware that are reliable, practical, and built to perform.</h1>
+        <h1>Engineering hardware that is reliable, practical, and built to perform.</h1>
         <p class="lead">
           I design and validate electronics across PCBs, measurement, and debugging.
-          This portfolio is a compact view of my key milestones.
+          This portfolio is a compact view of my selected work.
         </p>
         <div class="actions">
-          <a class="btn primary" href="#visuals">Have a glimpse</a>
-          <a class="btn secondary" href="#contact">Contact</a>
+          <a class="btn primary" href="#visuals">See work</a>
         </div>
       </div>
 
       <aside class="panel profile">
-        <h3>Profile</h3>
-        <p class="meta">Target roles: Electronics Engineer, Hardware Developer, Embedded Systems Engineer</p>
-        <div class="pillrow">
-          <span class="pill">Embedded C</span>
-          <span class="pill">PCB Design</span>
-          <span class="pill">SPICE</span>
-          <span class="pill">Oscilloscope</span>
-          <span class="pill">Debugging</span>
-          <span class="pill">Python</span>
-        </div>
+        <h3>Selected focus</h3>
+        <p class="meta">PCB design, signal integrity, debugging, and prototyping.</p>
       </aside>
     </section>
 
-   <!-- About grid: Profile image | About | Skills -->
-<section class="section three" id="about">
-  <div class="block profile-img-block">
-    <div class="profile-img-wrapper">
-      <img src="assets/Soldering.JPG" alt="Kowsalya Thirupathi Raja">
-    </div>
-  </div>
+    <section class="section three" id="about">
+      <div class="block profile-img-block">
+        <div class="profile-img-wrapper">
+          <img src="assets/Soldering.JPG" alt="Kowsalya Thirupathi Raja">
+        </div>
+      </div>
 
-  <div class="block">
-    <h2>About</h2>
-    <p class="intro">
-      I’m an electronics engineer focused on building reliable hardware and documenting them with clarity.
-      I like work that is measurable, testable, and well‑presented.
-    </p>
-  </div>
+      <div class="block">
+        <h2>About</h2>
+        <p class="intro">
+          I’m an electronics engineer focused on building reliable hardware and documenting them with clarity.
+          I like work that is measurable, testable, and well presented.
+        </p>
+      </div>
 
-  <div class="block" id="skills">
-    <h2>Skills</h2>
-    <div class="list">
-      <div class="item">
-        <div class="badge">1</div>
-        <div>
-          <b>Hardware</b>
-          <span>Analog and digital circuits, sensors, power, boards, and lab validation.</span>
-        </div>
+      <div class="block">
+        <h2>Focus</h2>
+        <p class="intro">
+          Hardware design, lab testing, debugging, and practical engineering work.
+        </p>
       </div>
-      <div class="item">
-        <div class="badge">2</div>
-        <div>
-          <b>Software</b>
-          <span>Embedded C, Python, scripting, and clean technical communication.</span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="badge">3</div>
-        <div>
-          <b>Tools</b>
-          <span>Oscilloscope, logic analyzer, simulation tools, and GitHub.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-    
-    <!-- A Glimpse section with clickable tiles -->
+    </section>
+
     <section class="section" id="visuals">
       <h2>A Glimpse</h2>
-      <p class="intro">
-        Get a glimpse of my previous works categorized as
-      </p>
+      <p class="intro">A small selection of projects and visuals.</p>
 
       <div class="gallery">
-        <!-- PCB tile -->
-        <article class="shot">
-          <a href="#modal-pcb" class="shot-link">
+        <details class="shot">
+          <summary class="shot-summary">
             <div class="placeholder">PCBs</div>
             <div class="cap">
               <b>Board Design</b>
-              <span>Rendered views of boards designed</span>
+              <span>Rendered views of boards designed.</span>
             </div>
-          </a>
-        </article>
+          </summary>
+          <div class="shot-body">
+            <p>Detailed description of your PCB-design work.</p>
+            <img src="assets/images/pcb1.png" alt="PCB layout">
+          </div>
+        </details>
 
-        <!-- ML in EMC tile -->
-        <article class="shot">
-          <a href="#modal-ml-emc" class="shot-link">
+        <details class="shot">
+          <summary class="shot-summary">
             <div class="placeholder">ML in EMC</div>
             <div class="cap">
               <b>Signal Integrity</b>
-              <span>Uses ML to predict SI metric for high‑speed PCB data links.</span>
+              <span>ML-based work for high-speed PCB data links.</span>
             </div>
-          </a>
-        </article>
+          </summary>
+          <div class="shot-body">
+            <p>Explain your ML-based EMC or signal-integrity project.</p>
+            <img src="assets/images/ml-emc.png" alt="ML plot">
+          </div>
+        </details>
 
-        <!-- 3D modeling tile -->
-        <article class="shot">
-          <a href="#modal-3d" class="shot-link">
+        <details class="shot">
+          <summary class="shot-summary">
             <div class="placeholder">3D modeling</div>
             <div class="cap">
               <b>Hobby Projects</b>
-              <span>To be able to model PCB housings</span>
+              <span>3D modeling for future PCB housings.</span>
             </div>
-          </a>
-        </article>
-      </div>
-
-      <!-- Modal popups (same window) -->
-      <div id="modal-pcb" class="modal">
-        <a href="#" class="modal-close">&times;</a>
-        <div class="modal-content">
-          <h3>PCB Projects</h3>
-          <p>Detailed description of your PCB‑design work.</p>
-          <img src="assets/images/pcb1.png" alt="PCB layout">
-        </div>
-      </div>
-
-      <div id="modal-ml-emc" class="modal">
-        <a href="#" class="modal-close">&times;</a>
-        <div class="modal-content">
-          <h3>Machine Learning in EMC</h3>
-          <p>Explain your ML‑based EMC or signal‑integrity project.</p>
-          <img src="assets/images/ml-emc.png" alt="ML plot">
-        </div>
-      </div>
-
-      <div id="modal-3d" class="modal">
-        <a href="#" class="modal-close">&times;</a>
-        <div class="modal-content">
-          <h3>3D Modeling</h3>
-          <p>Describe your 3D‑modeling projects for enclosures and housings.</p>
-          <img src="assets/images/3d-model.png" alt="3D model">
-        </div>
+          </summary>
+          <div class="shot-body">
+            <p>Describe your 3D-modeling projects for enclosures and housings.</p>
+            <img src="assets/images/3d-model.png" alt="3D model">
+          </div>
+        </details>
       </div>
     </section>
-
-    <section class="section two" id="resume">
-      <div class="block">
-        <h2>Resume</h2>
-        <p class="intro">If you wish to download my resume.</p>
-        <div class="actions">
-          <a class="btn primary" href="assets/K RAJA CV 13.05.2026.pdf" target="_blank" rel="noopener">Click here</a>
-        </div>
-      </div>
-
-      <div class="block" id="contact">
-        <h2>Contact</h2>
-        <p class="intro">You can reach me via</p>
-        <div class="contact">
-          <a href="mailto:thirupathirajakowsalya@gmail.com" aria-label="Email">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/kowsalya-thirupathi-raja-76b488171" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer class="wrap">© 2026 Kowsalya Thirupathi Raja. Built for GitHub Pages.</footer>
