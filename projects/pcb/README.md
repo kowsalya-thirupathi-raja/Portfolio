@@ -2,21 +2,22 @@
 
 ----
 
-#### Student Assistant (HiWi) | Digital Audio Recorder | Environmental digital audio recording.
-Handled component selection and datasheet comprehension.
-Developed electrical layout, schematic designs, and PCB layouts.
+#### Student Assistant (HiWi) | Digital Audio Recorder 
+* Developed for environmental digital audio recording.
+* Handled component selection and datasheet comprehension.
+* Developed electrical layout, schematic designs, and PCB layouts.
 
 ![PCB Design](images/hiwi1.png)
 *Digital Audio Recorder PCB*
 
 ----
 
-#### Hardware development | Bosch ebikes | BMS Testbench infra updates.
-Designed PCBs for upgrading test adapter setups for testbenches and BMS as a working student.
-Requirement analysis, Component selection, PCB designing
-Soldering, Validation and Testing of manufactured boards
-Refining and Documentation
-Test Bench calibration and more in lab support.
+#### Hardware development | Bosch ebikes
+* Designed PCBs for upgrading test adapter setups for testbenches and BMS as a working student.
+* Requirement analysis, Component selection, PCB designing.
+* Soldering, Validation and Testing of manufactured boards.
+* Refining and Documentation.
+* Test Bench calibration and more in lab support.
 
 ![PCB Design](images/bos1.png)
 *PCB designed for school students's company visit*
@@ -25,10 +26,10 @@ Test Bench calibration and more in lab support.
 
 ----
 
-#### DFG SPP | 3D Smart Sphere | Localization.
-Collaborated on a team project to implement a 3D smart sphere that transmits sensor data via Bluetooth to visualize ball trajectory.
-Specifically worked on the localization part of the project.
-Utilized Vpython and Matplotlib for 2D/3D path tracing and position density mapping.
+#### DFG SPP | 3D Smart Sphere
+* Collaborated on a team project to implement a 3D smart sphere that transmits sensor data via Bluetooth to visualize ball trajectory.
+* Specifically worked on the localization part of the project.
+* Utilized Vpython and Matplotlib for 2D/3D path tracing and position density mapping.
 
 ![PCB Design](images/spp1.png)
 *Smart Sphere PCB*
@@ -39,10 +40,10 @@ Utilized Vpython and Matplotlib for 2D/3D path tracing and position density mapp
 
 ----
 
-#### Research Assistant (WiMi) | Smart Screw Project | Sensor integrated machine element
-Focused on Industry 4.0 condition monitoring.
-Handled component selection and datasheet comprehension.
-Developed electrical layout, schematic designs, and PCB layouts.
+#### Research Assistant (WiMi) | Smart Screw Project
+* Focused on Industry 4.0 condition monitoring.
+* Handled component selection and datasheet comprehension.
+* Developed electrical layout, schematic designs, and PCB layouts.
 
 ![PCB Design](images/wimi1.png)
 ![PCB Design](images/wimi2.png)
