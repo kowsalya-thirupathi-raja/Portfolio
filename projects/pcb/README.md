@@ -47,5 +47,4 @@
 
 ![PCB Design]
 ![PCB Design]
-*Smart Screw PCB*
 
